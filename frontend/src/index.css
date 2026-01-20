@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  /* Pathway Brand Colors */
+  --color-pathway-50: #f0f9ff;
+  --color-pathway-100: #e0f2fe;
+  --color-pathway-500: #0ea5e9;
+  --color-pathway-600: #0284c7;
+  --color-pathway-900: #0c4a6e;
+
+  /* Dark Mode Palette */
+  --color-dark-bg: #0f172a;
+  --color-dark-card: #1e293b;
+  --color-dark-text: #f8fafc;
+
+  /* Custom Animations */
+  --animate-pulse-fast: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-fade-in: fadeIn 0.5s ease-out;
+  --animate-slide-up: slideUp 0.5s ease-out;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* Base Styles */
+body {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl;
+}
+
+.glass-card {
+  @apply bg-dark-card/60 backdrop-blur-md border border-white/5 rounded-xl shadow-lg transition-all duration-300;
+}
+
+.glass-card:hover {
+  @apply bg-dark-card/80;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
